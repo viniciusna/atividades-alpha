@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tutorial de HTML</h1>
+    Uma vez que você conheça a estrutura de um código HTML, as primeiras
+    funções a serem aprendidas são de inserção de texto, imagem e de criar
+    hyperlinks.
+
+    <p>
+        Os títulos são colocados com a síntaxe <br>
+        &lth1&gt(título)&lt/h1&gt
+    </p>
+
+    Além dessa tag "h1", tem tags de títulos de tamanhos
+    menores que vão de "h2" até "h6", o código
+    e o resultado ficam <br>
+
+    <h3>Código</h3> <br>
+    &lth1&gttítulo h1&lt/h1&gt <br>
+    &lth2&gttítulo h2&lt/h2&gt <br>
+    &lth3&gttítulo h3&lt/h3&gt <br>
+    &lth4&gttítulo h4&lt/h4&gt <br>
+    &lth5&gttítulo h5&lt/h5&gt <br>
+    &lth6&gttítulo h6&lt/h6&gt <br>
+
+    <h3>Resultado</h3>
+    <h1>título h1</h1>
+    <h2>título h2</h2>
+    <h3>título h3</h3>
+    <h4>título h4</h4>
+    <h5>título h5</h5>
+    <h6>título h6</h6>
+
+    Para inserir um parágrafo, usa-se a tag "p", é possível fazer um páragrafo
+    sem essa tag também. Além disso tem a tag "br" para quebrar linhas, exemplo:
+    
+    <h3>Código</h3> <br>
+    Parágrafo <br>  
+    &ltp>Parágrafo&lt/p> <br>
+    &ltp>Outro parágrafo &ltbr> com quebra de linha &lt/p> <br>
+    
+    <h3>Resultado</h3>
+    parágrafo
+    <p>parágrafo</p>
+    <p>Outro parágrafo <br> com quebra de linha </p>
+
+    <p>
+        Para inserir imagem na página, faz: <br>
+        &lt img src="(caminho da imagem)">
+    </p>
+
+    <h3>Código</h3> <br>
+    &ltimg src="cat.jpg"> <br>
+
+    <h3>Resultado</h3>
+    <img src="cat.jpg">
+
+    <p>
+        Há o atributo "alt" que faz uma mensagem mostrada caso a imagem não possa
+        ser carregada, assim a sítaxe fica <br>
+        &lt ima src="(caminho da imagem)" alt="(mensagem)"> <br>
+        Um exemplo onde isso pode acontecer é caso a imagem não exista,
+        então aparece um ícone com a mensagem do atributo "alt"
+    </p>
+
+    <img src="foto-inexistente.jpg" alt="Mensagem do alt">
+
+    <p>
+        Para fazer um hyperlink usamos <br>
+        &lta href="(endereço da página web)">"(palvra/frase linkada)"&lt/a>
+    </p>
+
+    <h3>Código</h3> <br>
+    &lta href="https://www.google.com.br/">Google&lt/a> <br>
+    &lta href="https://www.google.com.br/">Dá pra linkar frases também&lt/a>
+
+    <h3>Resultado</h3> <br>
+    <a href="https://www.google.com.br/">Google</a> <br>
+    <a href="https://www.google.com.br/">Dá pra linkar frases também</a>
+
+    <p>
+        Para fazer uma lista usa-se a tag "ul" para abrir as listas e os 
+        itens das listas são colocados nas tags "li"
+    </p>
+
+    <h3>Código</h3> <br>
+    &ltul> <br>
+        &ltli>Item 1&lt/li> <br> 
+        &ltli>Item 2&lt/li> <br>
+        &ltli>Item 3&lt/li> <br>
+    &lt/ul>
+
+    <h3>Resultado</h3> <br>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    Podemos fazer uma lista enumerada apenas mudando a tag "ul" para "ol"
+
+    <h3>Código</h3> <br>
+    &ltol> <br>
+        &ltli>Item 1&lt/li> <br> 
+        &ltli>Item 2&lt/li> <br>
+        &ltli>Item 3&lt/li> <br>
+    &lt/ol>
+
+    <h3>Resultado</h3> <br>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    Podemos fazer umas misturas como linkar uma imagem ou fazer listas de
+    títulos. Um outro atributo das imagens é o "title" que faz tooltip,
+    que é um texto que aparece quando se passa o cursor do mouse pela imagem,
+    a tag com esse atributo fica <br>
+    &ltimg src="(imagem)" title="(mensagem do tooltip)"> <br>
+    ou incluindo o atributo "alt" <br>
+    &ltimg src="(imagem)" title="(mensagem do tooltip)" alt="(mensagem do alt)"> <br>
+    Assim encerramos esse tutorial inicial de HTML com exemplos de "misturas" citados
+
+    <ul>
+        <li><h1>título h1</h1></li>
+        <li><h2>título h2</h2></li>
+        <li><h3>título h3</h3></li>
+        <li><h4>título h4</h4></li>
+        <li><h5>título h5</h5></li>
+        <li><h6>título h6</h6></li>
+    </ul>
+
+    <a href="https://www.championcat.cl/catflix/"><img src="cat2.png" title="Clique pra ver algo muito legal!"></a>
+
+</body>
+</html>
