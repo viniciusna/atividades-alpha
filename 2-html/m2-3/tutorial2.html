@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial 2</title>
+</head>
+<body>
+    <h1>Tutorial de HTML 2</h1>
+    Conhecido as funções básicas, podemos avançar para algumas estilizações,
+    como mudar a cor do texto, para isso se usa o código de cores RGB que
+    é explicado nesse 
+    <a href="https://dicasdeprogramacao.com.br/entenda-como-funcionam-os-codigos-de-cores-rgb/" target="blank">link</a>.
+    Depois de entendido esse código RGB, usamos esse código no atributo
+    "style" que é um atributo para parágrafos, títulos e outras tags que 
+    contenham textos, no caso, o atributo é colocado na tag de abertura <br>
+    &ltp style="color:(código RGB);"> (texto) &lt/p> <br>
+    Cores "definidas" que tenham nome como vermelho, verde, aqua, cinza
+    e etc, não precisa colocar o código RGB, pode colocar simplesmente
+    o nome da cor em inglês ao invés do seu código.
+    Alguns exemplos de seu uso
+
+    <h3>Código</h3> <br>
+    <pre>
+    &ltp style="color: #ff0000;"> Parágrafo em vermelho &lt/p> <br>
+    &ltp style="color: red;"> Outro parágrafo em vermelho &lt/p> <br>
+    &lth2 style="color: aqua;"> Título h2 &lt/h2> <br>
+    &lth3 style="color: #012345;"> Título h3 &lt/h3> <br>
+    &lth4 style="color: rgb(18, 131, 62);"> Título h4 &lt/h4> <br>
+    </pre>
+
+    <h3>Resultados</h3> <br>
+    <p style="color: #ff0000;"> Parágrafo em vermelho </p> <br>
+    <p style="color: red;"> Outro parágrafo em vermelho </p> <br>
+    <h2 style="color: aqua;"> Título h2 </h2>
+    <h3 style="color: #012345;"> Título h3 </h3>
+    <h4 style="color: rgb(18, 131, 62);"> Título h4 </h4>
+
+    Para destacar palavras em itálico usa-se a tag "i", para negrito usa-se
+    as tags "strong" ou "b" <br>
+
+    <h3>Código</h3> <br>
+    <pre>
+    &lti> Itálico &lt/i> <br>
+    &ltb> Negrito com a tag "b" &lt/b> <br>
+    &ltstrong> Negrito com a tag "strong" &lt/strong> <br>
+    &ltb style="color: orangered;"> Negrito colorido &lt/b> &lti style="color: rgb(21, 125, 151);"> e itálico colorido &lt/i> <br>
+    &ltb>&lti> Negrito e itálico &lt/i>&lt/b>
+    </pre>
+    
+    
+    <h3>Resultados</h3> <br>
+    <i> Itálico </i> <br>
+    <b> Negrito com a tag "b" </b> <br>
+    <strong> Negrito com a tag "strong" </strong> <br>
+    <b style="color: orangered;"> Negrito colorido </b> <i style="color: rgb(21, 125, 151);"> e itálico colorido </i> <br>
+    <b><i> Negrito e itálico </i></b>
+
+    <p>
+        Esses atributos de texto também funcionam em listas de forma análoga,
+        no caso de listas temos duas tags, "ul" e "li", o atributo na tag "ul",
+        será aplicado em todos os itens da lista, enquanto que o atributo na 
+        tag "li" vai aplicar aquele atributo apenas naquele item da lista
+    </p>
+    
+    <h3>Código</h3> <br>
+    <pre>
+    &ltul style="color: darkblue;"> <br>
+        &ltli> Item 1 &lt/li> <br>
+        &ltli> Item 2 &lt/li> <br>
+        &ltli> &lti> Item 3 &lt/i> &lt/li> <br>
+    &lt/ul> <br>
+        <br>
+    &ltul> <br>
+        &ltli style="color: green;"> Primeiro &lt/li> <br>
+        &ltli style="color: yellow;"> &lti> Segundo &lt/i> &lt/li> <br>
+        &ltli style="color: red;"> &ltb> Terceiro &lt/b> &lt/li> <br>
+    &lt/ul>
+    </pre>
+
+    <h3>Resultado</h3> <br>
+    <ul style="color: darkblue;">
+        <li> Item 1 </li>
+        <li> Item 2 </li>
+        <li> <i> Item 3 </i> </li>
+    </ul>
+
+    <ul>
+        <li style="color: green;"> Primeiro </li>
+        <li style="color: yellow;"> <i> Segundo </i> </li>
+        <li style="color: red;"> <b> Terceiro </b> </li>
+    </ul>
+
+    O link no primeiro parágrafo desse tutorial abre uma página numa nova
+    aba do navegador, para fazer isso usamos o atributo "target" na tag "a",
+    o valor do atributo é "blank", o elemento daquele link fica <br>
+    &lta href="https://dicasdeprogramacao.com.br/entenda-como-funcionam-os-codigos-de-cores-rgb/" 
+    target="blank">link&lt/a>. Mais exemplos:
+
+    <h3>Código</h3> <br>
+    <pre>
+    &lta href="https://www.google.com.br/"> Tag sem "target" abre a página na mesma aba &lt/a> <br>
+    &lta href="https://www.google.com.br/" target="blank"> Tag com "target" igual a "blank" abre a página numa nova aba &lt/a>
+    </pre>
+    <h3>Resultado</h3>
+    <a href="https://www.google.com.br/"> Tag sem "target" abre a página na mesma aba </a> <br>
+    <a href="https://www.google.com.br/" target="blank"> Tag com "target" igual a "blank" abre a página numa nova aba </a>
+
+    <p>
+        Podemos usar esse atributo para abrir imagens numa nova aba também, é
+        só colocar a imagem aonde colocariamos um endereço de página
+    </p>
+
+    <h3>Código</h3> <br>
+    <pre>
+    &lta href="https://exame.com/wp-content/uploads/2020/02/gatos.jpg?quality=70&strip=info&resize=680,453" target="blank">
+    &ltimg src="https://prosebem.files.wordpress.com/2012/04/fundo-laranja.gif?w=640"> &lt/a>
+    </pre>
+
+    <h3>Resultado</h3> <br>
+    <a href="https://exame.com/wp-content/uploads/2020/02/gatos.jpg?quality=70&strip=info&resize=680,453" target="blank">
+        <img src="https://prosebem.files.wordpress.com/2012/04/fundo-laranja.gif?w=640"> </a>
+    
+    <p>
+        Para fazer tabelas utiliza a tag "table", dentro dessa tag há
+        outras duas que são usadas para organizar os itens na tabela,
+        tem a tag "tr" usada para criar uma linha na tabela, dentro dessa
+        tag colocamos a tag "th" para montar as colunas e dentro dessa tag
+        colocamos os itens da tabela
+    </p>
+    
+    <h3>Código</h3> <br>
+    <pre>
+    &lttable> <br>
+        &lttr> <br>
+            &ltth> Item 1.1 &lt/th> <br>
+            &ltth> Item 1.2 &lt/th> <br>
+            &ltth> Item 1.3 &lt/th> <br>
+            &ltth> Item 1.4 &lt/th> <br>
+        &lt/tr> <br>
+        &lttr> <br>
+            &ltth> Item 2.1 &lt/th> <br>
+            &ltth> Item 2.2 &lt/th> <br>
+            &ltth> Item 2.3 &lt/th> <br>
+            &ltth> Item 2.4 &lt/th> <br>
+        &lt/tr> <br>
+        &lttr> <br>
+            &ltth> Item 3.1 &lt/th> <br>
+            &ltth> Item 3.2 &lt/th> <br>
+            &ltth> Item 3.3 &lt/th> <br>
+            &ltth> Item 3.4 &lt/th> <br>
+        &lt/tr> <br>
+    &lt/table> <br>
+    </pre>
+    
+    <h3>Resultado</h3> <br>
+    <table>
+        <tr>
+            <th> Item 1.1 </th>
+            <th> Item 1.2 </th>
+            <th> Item 1.3 </th>
+            <th> Item 1.4 </th>
+        </tr>
+        <tr>
+            <th> Item 2.1 </th>
+            <th> Item 2.2 </th>
+            <th> Item 2.3 </th>
+            <th> Item 2.4 </th>
+        </tr>
+        <tr>
+            <th> Item 3.1 </th>
+            <th> Item 3.2 </th>
+            <th> Item 3.3 </th>
+            <th> Item 3.4 </th>
+        </tr>
+    </table>
+    
+    <p>
+        Para comentar no código HTML faz &lt!-- (comentário) -->
+    </p>
+
+    <h3>Código</h3> <br>
+    <pre>
+    &lt!-- O comentário só aparece no código fonte, então não é mostrado ao usuário -->
+    </pre>
+    <h3>Resultado</h3> <br>
+    <!-- O comentário só aparece no código fonte, então não é mostrado ao usuário -->
+
+    (Viu? não aparece nada) Até a próxima!
+
+</body>
+</html>
