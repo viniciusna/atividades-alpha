@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de usuário</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.220);">
+    <h1>Cadastro</h1>
+
+    <p> <strong> Seja bem-vindo! </strong> Complete seu cadastro para continuar </p>
+
+    <h2>Dados do usuário</h2>
+
+    <form action="">
+    <fieldset style="background: rgb(0, 0, 0,0.300);">
+        <legend style="color: rgb(18, 43, 155);">Dados pessoais</legend>
+        <label for="nome"> Nome </label> <input type="text" id="nome">
+        <label for="email"> Email </label> <input type="text">  
+        <label for="data"> Data de nascimento </label> <input type="date" id='data'> <br />
+        <br>
+        Gênero: <br />
+        <label for="mas"> Masculino </label> <input type="radio" id='mas' name='gen' />
+        <label for="fem"> Feminino </label> <input type="radio" id='fem' name='gen'>
+        <label for="out"> Outro </label> <input type="radio" id='out' name='gen'>
+    </fieldset>
+    <br />
+    <fieldset style="background: rgb(0, 0, 0,0.300);">
+        <legend style="color: rgb(18, 43, 155);">Configuração de usuário</legend>
+        <label for="nick"> <i> Nickname </i> </label> <input type="text" id='nick' /> <br />
+        <br />
+        <label for="criar-senha"> <b> Crie um senha </b> </label> <input type="password" id='criar-senha'> <br />
+        <br />
+        <label for="senha"> <b> Senha </b> </label> <input type="password" id='senha'>
+    </fieldset>
+
+    <fieldset style="background: rgb(211, 133, 133);">
+        <legend style="color: darkgreen;">Perfil de usuário</legend>
+        <h3>Selecione os tipos de produto que tenha interesse</h3>
+        <ul>
+            <li> <label for="livros"> Livros </label> <input type="checkbox" id='livros' /> </li>
+            <li> <label for="jogos"> Jogos </label> <input type="checkbox" id="jogos" /> </li>
+            <li> <label for="quadrinhos"> Quadrinhos </label> <input type="checkbox" id="quadrinhos" /> </li>
+            <li> <label for="filmes"> Filmes e séries </label> <input type="checkbox" id="filmes" /> </li>
+        </ul>
+
+        <h3>Qual a chance de você recomendar este serviço a alguém que conheça?</h3>
+        <h4>(0 para "não recomendaria" e 10 "recomendaria fortemente")</h4>
+        <input type="range" oninput="display.value=value" onchange="display.value=value" max="10" />
+        <input type="text" id="display" value="5" readonly />
+    </fieldset>
+    <br />
+    <input type="reset" />
+    <input type="submit">
+    <br />
+    </form>
+    <hr>
+    <img src="https://s2.glbimg.com/oFhbBxij_EW5HV1ezcdmSv5DQMw=/e.glbimg.com/og/ed/f/original/2018/07/23/437709250_47bade2875_o.jpg" alt="" />
+    <a href="https://revistagalileu.globo.com/Ciencia/Psicologia/noticia/2018/07/receber-uma-mensagem-de-obrigado-faz-muito-bem-diz-estudo.html" target="blank"> fonte da imagem </a>
+
+</body>
+</html>

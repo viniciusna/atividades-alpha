@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial 3</title>
+</head>
+<body>
+    <h1>Tutorial 3 de HTML</h1>
+
+    Continuamos o tutorial agora com alguns inputs para uma página, os inputs
+    é um dos principais meios em que um usuário pode interagir com a página.
+    Veremos aqui os inputs:
+
+    <ul>
+        <li> text </li>
+        <li> password </li>
+        <li> date </li>
+        <li> radio </li>
+        <li> checkbox </li>
+        <li> range </li>
+        <li> reset </li>
+        <li> submit </li>
+    </ul>
+
+    Para fazer um input usamos a tag "input", o tipo de input é determinado
+    pelo atributo "type", alguns dos valores do type estão listados na lista
+    anterior. Além disso precisamos "dar um nome" para o input, por exemplo,
+    indicar numa caixa de texto que o usuário deve colocar o seu nome. Para isso,
+    usamos a tag "label". 
+
+    <h3>Código</h3>
+    &ltlabel> Nome &lt/label> &ltinput type="text" />
+    
+    <h3>Resultado</h3>
+    <label> Nome </label> <input type="text" />
+    
+    <p>
+        Além disso podemos identificar uma tag com o atributo "id" e então escolher
+        um nome para identificar aquela tag, isso é útil para o input, o elemento
+        ficaria assim: <br />
+        &ltinput type="text" id=" (identificador da tag) " /> <br />
+        Isso é bem útil ao ser utilizado juntamente com o atributo "for" da tag 
+        "label", colocamos o valor do "id" da tag "input" no valor do atributo "for"
+        da tag "label" e assim, quando o usuário clicar na palavra/frase que esteja
+        sob o label fará com que o cursor vá para o input com a "id" que está no "for". 
+    </p>
+
+    <h3>Código</h3>
+    &ltlabel for="teste"> clique por aqui &lt/label> &ltinput type="text" id="teste" />
+
+    <h3>Resultado</h3>
+    <label for="teste"> clique por aqui </label> <input type="text" id="teste" />
+
+    <p>
+        Seguiremos esse padrão para fazer nossos inputs aqui. Nesse caso então, o que
+        vai mudar de um exemplo para outro a seguir é apenas o valor do atributo "type"
+        na tag "input"
+    </p>
+
+    <h2>1- Input "text"</h2>
+    Esse a gente já viu nos exemplos anteriores, esse input abre uma caixa de texto,
+    do tipo que a gente geralmente vê para inserir nome, email, senhas e etc.
+
+    <h2>2- Input "password"</h2>
+    Esse é um input tipo "text" mas não mostra os caracteres que foram digitados, ao
+    invés disso, ele mostra pontos pretos, é utilizados em campos que se insere senhas.
+    Exemplo
+
+    <h3>Código</h3>
+    &ltlabel for="email"> Email &lt/label> &ltinput type="text" id='email' /> <br />
+    &ltlabel for="senha"> Senha &lt/label> &ltinput type="password" id='senha'>
+
+    <h3>Resultado</h3>
+    <label for="email"> Email </label> <input type="text" id='email' /> <br />
+    <label for="senha"> Senha </label> <input type="password" id='senha'>
+
+    <h2>3- Input "date"</h2>
+    Esse serve pra colocar um espaço para se colocar data, ele já vem formatado para
+    para colocar data e tem um calendário embutido.
+
+    <h3>Código</h3>
+    &ltlabel for="data"> Data de nascimento &lt/label> &ltinput type="date" id="data" />
+
+    <h3>Resultados</h3>
+    <label for="data"> Data de nascimento </label> <input type="date" id="data" />
+
+    <h2>4- Input "radio"</h2>
+    O "radio" é uma opção de marcar muito visto em formulários, para fazer perguntas
+    que tenham alternativas. Podemos usar o atributo "name" para vincular as alternativas
+    a uma mesma questão, assim somente uma das alternativas podem ser marcadas.
+    
+    <h3>Código</h3>
+    &ltlabel for="a"> Alternativa a &lt/label> &ltinput type="radio" id="a" name="pergunta"> <br />
+    &ltlabel for="b"> Alternativa b &lt/label> &ltinput type="radio" id="b" name="pergunta"> <br />
+    &ltlabel for="c"> Alternativa c &lt/label> &ltinput type="radio" id="c" name="pergunta"> <br />
+    
+    <h3>Resultado</h3>
+    <label for="a"> Alternativa a </label> <input type="radio" id="a" name="pergunta">
+    <label for="b"> Alternativa b </label> <input type="radio" id="b" name="pergunta">
+    <label for="c"> Alternativa c </label> <input type="radio" id="c" name="pergunta">
+
+    <h2>5- Input "checkbox"</h2>
+    A checkbox é usado principalmente em questões de formulários que permite marcar mais de 
+    uma alternativa, diferente da "radio", a checkbox pode ser desmarcada.
+
+    <h3>Código</h3>
+    &ltlabel for="c1"> Checkbox 1 &lt/label> &ltinput type="checkbox" id="c1" /> <br /> 
+    &ltlabel for="c2"> Checkbox 2 &lt/label> &ltinput type="checkbox" id="c2" /> <br />
+
+    <h3>Resultado</h3>
+    <label for="c1"> Checkbox 1 </label> <input type="checkbox" id="c1" />
+    <label for="c2"> Checkbox 2 </label> <input type="checkbox" id="c2" />
+
+
+    <h2>6- Input "range"</h2>
+    Esse serve pra colocar uma barra que o usuário pode controlar para controlar algum valor,
+    parecido com a barra de volume de apps
+
+    <h3>Código</h3>
+    Volume &ltinput type="range" />
+    
+    <h3>Resultado</h3>
+    Volume <input type="range" />
+
+
+    <h2>7- "reset" e "submit"</h2>
+    Para usar estes dois atributos é preciso que eles estejam dentro da tag "form",
+    que é usada para formulários, como esses valores sugerem, o "reset" reinicia o formulários
+    e o "submit", quando devidamente configurado (que não é o caso), enviará o formulário.
+
+    <h3>Código</h3>
+    <pre>
+        &ltform>
+            &ltlabel for="email1"> Email &lt/label> &ltinput type="text" id='email1' /> &ltbr /> <br />
+            &ltlabel for="senha1"> Senha &lt/label> &ltinput type="password" id='senha1'> &ltbr /> <br />
+            &lthr> <br />
+            Pergunta 1 &ltbr /> <br />
+            &ltlabel for="a1"> Alternativa a &lt/label> &ltinput type="radio" id="a1" name="perguntan"> &ltbr /> <br />
+            &ltlabel for="b1"> Alternativa b &lt/label> &ltinput type="radio" id="b1" name="perguntan"> &ltbr /> <br />
+            &ltlabel for="c12"> Alternativa c /label> &ltinput type="radio" id="c12" name="perguntan"> &ltbr /> <br />
+            &lthr> <br />
+            Pergunta 2 &ltbr /> <br />
+            &ltlabel for="cc1"> Checkbox 1 &lt/label> &ltinput type="checkbox" id="cc1" /> &ltbr /> <br />
+            &ltlabel for="cc1"> Checkbox 2 &lt/label> &ltinput type="checkbox" id="cc2" /> &ltbr /> <br />
+            &lthr> <br />
+            &ltinput type="reset"> <br />
+            &ltinput type="submit"> <br />
+        &lt/form> <br />    
+    </pre>
+
+    <h3>Resultado</h3>
+    <form>
+        <label for="email1"> Email </label> <input type="text" id='email1' /> <br />
+        <label for="senha1"> Senha </label> <input type="password" id='senha1'> <br />
+        <hr>
+        Pergunta 1 <br />
+        <label for="a1"> Alternativa a </label> <input type="radio" id="a1" name="perguntan"> <br />
+        <label for="b1"> Alternativa b </label> <input type="radio" id="b1" name="perguntan"> <br />
+        <label for="c12"> Alternativa c </label> <input type="radio" id="c12" name="perguntan"> <br />
+        <hr>
+        Pergunta 2 <br />
+        <label for="cc1"> Checkbox 1 </label> <input type="checkbox" id="cc1" /> <br />
+        <label for="cc2"> Checkbox 2 </label> <input type="checkbox" id="cc2" /> <br />
+        <hr>
+        <input type="reset" />
+        <input type="submit" />
+    </form>    
+</body>
+</html>
