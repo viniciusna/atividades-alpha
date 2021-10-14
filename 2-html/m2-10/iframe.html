@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial 4: Iframe</title>
+</head>
+<body style="background: #a0122d;">
+    <fieldset style="margin: auto; width: 900px; background: white;">
+    <h1 style="text-align: center; margin: auto;">Tutorial de HTML</h1> <br>
+    <h2 style="text-align: center; margin: auto;">Iframe</h2> <br>
+
+    <p style="text-align: justify; margin: auto;">
+        Iframe são aquelas janelas que vemos nas páginas que contém conteúdo de outra
+        página ou de um vídeo. Para isso usamos a tag "iframe" da seguinte forma
+    </p>
+    &ltiframe src="(página a ser mostrada)">&lt/iframe>
+
+    <h3 style="color: #036225;">Código</h3>
+    <pre style="background: #ffff95; width: 100%;">
+        &ltiframe src="https://pt.wikipedia.org/wiki/Alan_Turing">&lt/iframe>
+    </pre>
+
+    <h3 style="color: #036225;">Resultado</h3>
+    <iframe src="https://pt.wikipedia.org/wiki/Alan_Turing"></iframe>
+
+    <p style="text-align: justify; margin: auto; margin-top: 40px;">
+        Podemos utilizar atributos "width" e "height" para manipular o tamanho da
+        janela do iframe, "frameborder" para o tamanho da borda da janela
+    </p>
+
+    <h3 style="color: #036225;">Código</h3>
+    <pre style="background: #ffff95;">
+        &ltiframe src="https://pt.wikipedia.org/wiki/Alan_Turing" frameborder="0" width="500px" height="400px">&lt/iframe>
+    </pre>
+
+    <h3 style="color: #036225;">Resultado</h3>
+    <iframe src="https://pt.wikipedia.org/wiki/Alan_Turing" frameborder="0"
+    width="500px" height="400px"></iframe>
+
+    <p style="text-align: justify; margin: auto; margin-top: 40px;">
+        Para colocar um vídeo do YouTube ou uma aplicação de algum site como uma janela
+        iframe com o google maps dentro, vai em compartilhar e em uma das opções será "incorporar"
+        onde já vem uma tag pré-definida pra colocar no HTML, mas também pode-se pegar o link do
+        vídeo "embed" nessa tag. Para vídeos temos o atributo "allowfullscreen" para permitir abrir o
+        vídeo em tela cheia.
+        </p>
+
+    <h3 style="color: #036225;">Código</h3>
+    <pre style="background: #ffff95; width: 100%;">
+        &ltiframe src="https://www.youtube.com/embed/kn3ss_0J4W8" frameborder="0" width="560" height="315" allowfullscreen>&lt/iframe>
+    </pre>
+
+    <h3 style="color: #036225;">Resultado</h3>
+    <iframe src="https://www.youtube.com/embed/kn3ss_0J4W8" frameborder="0" width="560" height="315" allowfullscreen></iframe>
+    </fieldset>
+</body>
+</html>
