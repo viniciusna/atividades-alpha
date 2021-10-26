@@ -6,13 +6,13 @@ div { border: 3px solid red;  width: 700px;  margin: auto;  background: #ffe4819
 
  p { text-align: justify;  padding: 10px;  font-size: 18px; line-height: 1.5;}
 
-#logo { margin: 10px 210px; }
+#logo { width: 279px; }
 
-a { text-decoration: none; color: #c01a1a; }
+#lilogo { margin: 10px 210px;  text-decoration: none; color: #c01a1a; }
 
-a:focus { background: #ffc016;  }
+a:focus { background: #ffc016; }
 
-a :hover { width: 295px; border: 2px solid #f91c21; }
+a img:hover { width: 295px; border: 2px solid #f91c21; }
 
 a :active { background: #ffc016; }
 
