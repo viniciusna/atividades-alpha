@@ -1,0 +1,14 @@
+body { background: deepskyblue;  }
+
+div { border: 3px solid blue;  display: flex; margin-bottom: 40px; background: white;
+border-radius: 10px; }
+
+#box-imagem { height: 300px;  justify-content: center;  align-items: center; }
+
+#gato { width: 256px; height: 150px; }
+
+#centro { height: 150px; justify-content: space-around; align-items: center; }
+
+#vertical { flex-direction: column; }
+
+#horizontal { height: 150px; }
