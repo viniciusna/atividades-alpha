@@ -1,0 +1,87 @@
+function getById(id) {
+    return document.getElementById(id)
+}
+
+function writeInTag(id, content) {
+    getById(id).innerHTML = content
+}
+
+function getByName(name) {
+    return document.getElementsByName(name)
+}
+
+let paoValue = 0
+let hamburguerValue = 0
+let saladaValue = 0
+let queijoValue = 0
+
+function getValuePao() {
+    for (let i = 0; i < getByName("pao").length; i++) {
+        if ( getByName("pao")[i].checked ) {
+            switch (i) {
+                case 0 : paoValue = 3; break
+                case 1 : paoValue = 8; break
+                case 2 : paoValue = 6; break
+            }
+        }
+    }
+}
+
+function getValuehamburguer() {
+    for (let i = 0; i < getByName("hamburguer").length; i++) {
+        if ( getByName("hamburguer")[i].checked ) {
+            switch (i) {
+                case 0 : hamburguerValue = 13; break
+                case 1 : hamburguerValue = 10; break
+                case 2 : hamburguerValue = 12; break
+            }
+        }
+    }
+}
+
+function getValuesalada() {
+    for (let i = 0; i < getByName("salada").length; i++) {
+        if ( getByName("salada")[i].checked ) {
+            switch (i) {
+                case 0 : saladaValue = 1.5; break
+                case 1 : saladaValue = 1.5; break
+                case 2 : saladaValue = 0; break
+            }
+        }
+    }
+}
+
+function getValuequeijo() {
+    for (let i = 0; i < getByName("queijo").length; i++) {
+        if ( getByName("queijo")[i].checked ) {
+            switch (i) {
+                case 0 : queijoValue = 3; break
+                case 1 : queijoValue = 3; break
+                case 2 : queijoValue = 5; break
+            }
+        }
+    }
+}
+
+function showTotal() {
+    getValuePao();
+    getValuehamburguer();
+    getValuesalada()
+    getValuequeijo()
+    writeInTag("total", `R$ ${(paoValue + hamburguerValue + saladaValue + queijoValue).toFixed(2)}`)
+}
+
+function getAwnser(name, idWherePutAwnser) {
+    for (let i = 0; i < getByName(name).length; i++) {
+        if ( getByName(name)[i].checked ) {
+            writeInTag(idWherePutAwnser, getByName(name)[i].value)
+        }
+    }
+}
+
+function confirm() {
+    getAwnser("pao", "pao-awnser")
+    getAwnser("hamburguer", "hamburguer-awnser")
+    getAwnser("salada", "salada-awnser")
+    getAwnser("queijo", "queijo-awnser")
+}
