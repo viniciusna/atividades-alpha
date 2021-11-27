@@ -18,10 +18,16 @@ let queijoValue = 0
 function getValuePao() {
     for (let i = 0; i < getByName("pao").length; i++) {
         if ( getByName("pao")[i].checked ) {
-            switch (i) {
-                case 0 : paoValue = 3; break
-                case 1 : paoValue = 8; break
-                case 2 : paoValue = 6; break
+            if (i == 0) {
+                paoValue = 3
+            }
+
+            else if (i == 1) {
+                paoValue = 8
+            }
+
+            else {
+                paoValue = 6
             }
         }
     }
@@ -30,10 +36,16 @@ function getValuePao() {
 function getValuehamburguer() {
     for (let i = 0; i < getByName("hamburguer").length; i++) {
         if ( getByName("hamburguer")[i].checked ) {
-            switch (i) {
-                case 0 : hamburguerValue = 13; break
-                case 1 : hamburguerValue = 10; break
-                case 2 : hamburguerValue = 12; break
+            if (i == 0) {
+                hamburguerValue = 13
+            }
+
+            else if (i == 1) {
+                hamburguerValue = 10
+            }
+
+            else {
+                hamburguerValue = 12
             }
         }
     }
@@ -42,10 +54,16 @@ function getValuehamburguer() {
 function getValuesalada() {
     for (let i = 0; i < getByName("salada").length; i++) {
         if ( getByName("salada")[i].checked ) {
-            switch (i) {
-                case 0 : saladaValue = 1.5; break
-                case 1 : saladaValue = 1.5; break
-                case 2 : saladaValue = 0; break
+            if (i == 0) {
+                saladaValue = 1.5
+            }
+
+            else if (i == 1) {
+                saladaValue = 1.5
+            }
+
+            else {
+                saladaValue = 0
             }
         }
     }
@@ -54,10 +72,16 @@ function getValuesalada() {
 function getValuequeijo() {
     for (let i = 0; i < getByName("queijo").length; i++) {
         if ( getByName("queijo")[i].checked ) {
-            switch (i) {
-                case 0 : queijoValue = 3; break
-                case 1 : queijoValue = 3; break
-                case 2 : queijoValue = 5; break
+            if (i == 0) {
+                queijoValue = 3
+            }
+
+            else if (i == 1) {
+                queijoValue = 3
+            }
+
+            else {
+                queijoValue = 5
             }
         }
     }
