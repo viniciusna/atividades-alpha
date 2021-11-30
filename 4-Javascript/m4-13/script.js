@@ -2,10 +2,6 @@ function getById(id) {
     return document.getElementById(id)
 }
 
-// function getByName(yourClass) {
-//     return document.getElementsByClassName(yourClass)
-// }
-
 function getByName(name) {
     return document.getElementsByName(name)
 }
@@ -93,6 +89,7 @@ function getInput() {
 function race() {
 
     writeInTag("laps", '')
+    writeInTag("tiebreaker", '')
 
     let lapsNumber = parseInt( getById("laps-number").innerHTML )
     let pedroLapsWon = 0
@@ -123,15 +120,40 @@ function race() {
         }
     }
 
-    let moreLapsWon = whoIsGreater(pedroLapsWon, jucaLapsWon, ednaLapsWon)
-
     writeInTag("pedro-laps-won", pedroLapsWon)
     writeInTag("juca-laps-won", jucaLapsWon)
     writeInTag("edna-laps-won", ednaLapsWon)
 
-    let ancilla = true
+    while ( pedroLapsWon == jucaLapsWon || pedroLapsWon == ednaLapsWon || jucaLapsWon == ednaLapsWon ) {
+        let pedrolap = ( getRandom(pedroCar.vmin, pedroCar.vmax)*(1-pedroCar.drift/100) ).toFixed(2)
+        let jucalap = ( getRandom(jucaCar.vmin, jucaCar.vmax)*(1-jucaCar.drift/100) ).toFixed(2)
+        let ednalap = ( getRandom(ednaCar.vmin, ednaCar.vmax)*(1-ednaCar.drift/100) ).toFixed(2)
 
-    
+        let greaterSpeed = whoIsGreater(parseFloat(pedrolap), parseFloat(jucalap), parseFloat(ednalap)).toFixed(2)
+        let lapWinner
+
+        switch (greaterSpeed) {
+            case pedrolap : lapWinner = "Pedro" ; break;
+            case jucalap : lapWinner = "Juca" ; break;
+            case ednalap : lapWinner = "Edna" ; break;
+        }
+
+        getById("laps").innerHTML += `<p> Extra lap (desempate): ${lapWinner} </p>`
+
+        switch (lapWinner) {
+            case "Pedro" : pedroLapsWon++ ; break;
+            case "Juca" : jucaLapsWon++ ; break;
+            case "Edna" : ednaLapsWon++ ; break;
+        }
+
+        writeInTag("tiebreaker", 
+        `Resultado final após o desempate
+        <p>Pedro: ${pedroLapsWon} </p>
+        <p>Juca: ${jucaLapsWon} </p>
+        <p>Edna: ${ednaLapsWon} </p>`)
+    }
+
+    let moreLapsWon = whoIsGreater(pedroLapsWon, jucaLapsWon, ednaLapsWon)
 
     switch (moreLapsWon) {
         case pedroLapsWon : raceWinner = "Pedro"; break;
