@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+form {
+    margin: 20px;
+}
+
+label {
+    margin: 0 20px 0 3px;
+}
+
+#container-cars {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cars {
+    border: 3px solid;
+    padding: 10px;
+}
+
+#container-data-race {
+    display: flex;
+    justify-content: space-between;
+}
+
+    #container-data-race * {
+        flex: 0 300px;
+    }
+
+    #laps {
+        overflow: auto;
+        height: 400px;
+    }
+
+    #result {
+        align-self: center;
+        font-size: 23px;
+    }
