@@ -14,6 +14,24 @@ function writeInTag(id, content) {
     getById(id).innerHTML = content
 }
 
+let typeOfCars = {
+    popular: {
+        vmin: {min: 110, max: 130}, 
+        vmax: {min: 180, max: 200}, 
+        drift: {min: 3, max: 4}
+    },
+    sport: {
+        vmin: {min: 125, max: 145}, 
+        vmax: {min: 195, max: 215}, 
+        drift: {min: 2, max: 3}
+    },
+    supersport: {
+        vmin: {min: 140, max: 160}, 
+        vmax: {min: 210, max: 230}, 
+        drift: {min: 1, max: 1.75}
+    },
+}
+
 let pedroCar = {
     vmin : 150 ,
     vmax : 230 ,
@@ -48,42 +66,30 @@ function getRandomDrift(min, max) {
 
 function raffleCar(idToWriteIn, object, writeRaflleVMIN, writeRaflleVMAX, writeRaflleDrift) {
     let raffle = getRandom(0, 100)
+    let car = ''
 
     if ( raffle <= 60 ) {
         writeInTag(idToWriteIn, "Popular")
-
-        object.vmin = getRandom(110, 130)
-        object.vmax = getRandom(180, 200)
-        object.drift = getRandomDrift(3, 4)
-
-        writeInTag(writeRaflleVMIN, object.vmin)
-        writeInTag(writeRaflleVMAX, object.vmax)
-        writeInTag(writeRaflleDrift, object.drift)
+        car = typeOfCars.popular
     }
 
     else if ( raffle <= 95 ) {
         writeInTag(idToWriteIn, "Sport")
-
-        object.vmin = getRandom(125, 145)
-        object.vmax = getRandom(195, 215)
-        object.drift = getRandomDrift(2, 3)
-
-        writeInTag(writeRaflleVMIN, object.vmin)
-        writeInTag(writeRaflleVMAX, object.vmax)
-        writeInTag(writeRaflleDrift, object.drift)
+        car = typeOfCars.sport
     }
 
     else {
         writeInTag(idToWriteIn, "Super sport")
+        car = typeOfCars.supersport
+    }
 
-        object.vmin = getRandom(140, 160)
-        object.vmax = getRandom(210, 230)
-        object.drift = getRandomDrift(1,1.75)
+        object.vmin = getRandom(car.vmin.min, car.vmin.max)
+        object.vmax = getRandom(car.vmax.min, car.vmax.max)
+        object.drift = getRandomDrift(car.drift.min, car.drift.max)
 
         writeInTag(writeRaflleVMIN, object.vmin)
         writeInTag(writeRaflleVMAX, object.vmax)
         writeInTag(writeRaflleDrift, object.drift)
-    }
 }
 
 function createCarPedro() {
