@@ -53,6 +53,79 @@ function addOfClient() {
     });
 }
 
+function filter() {
+    let arrayfiltered = clients.slice()
+    let searchFor = getValueInput("filter-name")
+    let initialDate = getValueInput("filter-initial-date")
+    let finalDate = getValueInput("filter-final-date")
+    let minValue = getValueInput("filter-min-value")
+    let maxValue = getValueInput("filter-max-value")
+
+    if ( searchFor != '' ) {
+        writeInTag("list", "<tr> <th>Nome</th> <th>Compra</th> <th>Data de vencimento</th> <th>Juros</th> <th>Total</th> </tr>")
+
+        arrayfiltered = arrayfiltered.filter( element =>
+            (element.name).toLowerCase().indexOf(searchFor.toLowerCase()) > -1
+            )
+    }
+
+    if ( initialDate != '' ) {
+        writeInTag("list", "<tr> <th>Nome</th> <th>Compra</th> <th>Data de vencimento</th> <th>Juros</th> <th>Total</th> </tr>")
+
+        arrayfiltered = arrayfiltered.filter( element =>
+            element.date >= initialDate
+            )
+    }
+
+    if ( finalDate != '' ) {
+        writeInTag("list", "<tr> <th>Nome</th> <th>Compra</th> <th>Data de vencimento</th> <th>Juros</th> <th>Total</th> </tr>")
+
+        arrayfiltered = arrayfiltered.filter( element =>
+            element.date <= finalDate
+            )
+    }
+
+    if ( minValue != '' ) {
+        writeInTag("list", "<tr> <th>Nome</th> <th>Compra</th> <th>Data de vencimento</th> <th>Juros</th> <th>Total</th> </tr>")
+
+        arrayfiltered = arrayfiltered.filter( element =>
+            element.total >= minValue
+            )
+    }
+
+    if ( maxValue != '' ) {
+        writeInTag("list", "<tr> <th>Nome</th> <th>Compra</th> <th>Data de vencimento</th> <th>Juros</th> <th>Total</th> </tr>")
+
+        arrayfiltered = arrayfiltered.filter( element =>
+            element.total <= maxValue
+            )
+    }
+
+    arrayfiltered.forEach(element => {
+        addWriteInTag("list", `<tr> <td>${element.name}</td>
+                <td> R$ ${parseFloat( element.purchase ).toFixed(2)}</td>
+                <td>${ element.date }</td> <td> R$ ${ (element.fees).toFixed(2)} </td>
+                <td> R$ ${ (element.total).toFixed(2)} </td> </tr>`)
+    });
+}
+
+function backFromFilter() {
+    writeInTag("list", "<tr> <th>Nome</th> <th>Compra</th> <th>Data de vencimento</th> <th>Juros</th> <th>Total</th> </tr>")
+
+    getById("filter-name").value = ''
+    getById("filter-initial-date").value = ''
+    getById("filter-final-date").value = ''
+    getById("filter-min-value").value = ''
+    getById("filter-max-value").value = ''
+
+    clients.forEach(element => {
+        addWriteInTag("list", `<tr> <td>${element.name}</td>
+                <td> R$ ${parseFloat( element.purchase ).toFixed(2)}</td>
+                <td>${ element.date }</td> <td> R$ ${ (element.fees).toFixed(2)} </td>
+                <td> R$ ${ (element.total).toFixed(2)} </td> </tr>`)
+    });
+}
+
 function sortByClient() {
     let clientsSortedByClients = []
     clients.forEach( (element) => {
@@ -106,7 +179,6 @@ function sortByDate() {
                 <td> R$ ${ (element.total).toFixed(2)} </td> </tr>`)
     });
 }
-
 
 function totalbyClient() {
     writeInTag("table-clients-and-date", "<tr> <th> Nome </th> <th> Total </th> </tr>")

@@ -2,14 +2,6 @@ function getById(id) {
     return document.getElementById(id)
 }
 
-// function getByName(yourClass) {
-//     return document.getElementsByClassName(yourClass)
-// }
-
-// function getByName(name) {
-//     return document.getElementsByName(name)
-// }
-
 function getValueInput(id) {
     return getById(id).value
 }
