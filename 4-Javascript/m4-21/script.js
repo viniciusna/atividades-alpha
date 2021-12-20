@@ -32,11 +32,9 @@ function raffle(callback) {
 function number() {
     let number = getRandom(1, 60)
     let i = 0
-    console.log(number)
 
     while ( i < drawnNumbers.length ) {
         if ( drawnNumbers[i] == number ) {
-            console.log("Repetiu " + number)
             number = getRandom(1, 60)
             i = -1
         }
@@ -44,7 +42,6 @@ function number() {
     }
 
     drawnNumbers.push(number)
-    console.log(drawnNumbers)
 
     writeInTagByclass("container-numbers", i, number)
 
