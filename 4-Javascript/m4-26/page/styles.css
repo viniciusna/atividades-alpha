@@ -1,0 +1,23 @@
+main {
+    margin: 0 auto;
+    width: 950px;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 30px;
+}
+
+#container * {
+    margin: 0 20px;
+}
+
+#display-options {
+    display: inline;
+}
+
+#table {
+    width: 900px;
+    text-align: center;
+}
