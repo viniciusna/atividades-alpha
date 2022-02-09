@@ -19,28 +19,28 @@
             <button onclick="digitInput(1)" id="1">1</button>
             <button onclick="digitInput(2)" id="2">2</button>
             <button onclick="digitInput(3)" id="3">3</button>
-            <button class="operation-buttons" id="+" onclick="operationInput('+')">+</button>
+            <button class="operation-buttons" id="sum" onclick="operationInput('sum')">+</button>
 
             <button onclick="digitInput(4)" id="4">4</button>
             <button onclick="digitInput(5)" id="5">5</button>
             <button onclick="digitInput(6)" id="6">6</button>
-            <button class="operation-buttons" id="-" onclick="operationInput('-')">-</button>
+            <button class="operation-buttons" id="sub" onclick="operationInput('sub')">-</button>
 
             <button onclick="digitInput(7)" id="7">7</button>
             <button onclick="digitInput(8)" id="8">8</button>
             <button onclick="digitInput(9)" id="9">9</button>
-            <button class="operation-buttons" id="*" onclick="operationInput('*')">*</button>
+            <button class="operation-buttons" id="mult" onclick="operationInput('mult')">*</button>
 
-            <button id="del" onclick="del()">del</button>
+            <button id="del" onclick="del()" ondblclick="delAll()" >del</button>
             <button onclick="digitInput(0)" id="0">0</button>
-            <button class="operation-buttons" id="/" onclick="operationInput('/')">/</button>
             <button id="dot" onclick="digitInput('.')" >,</button>
-            <button id="equal" onclick="result()">=</button>
+            <button class="operation-buttons" id="division" onclick="operationInput('division')">/</button>
+            <button id="equal" onclick="makeAccount()">=</button>
         </div>
     </main>
 
-</body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="script.js"></script>
+</body>
 
 </html>

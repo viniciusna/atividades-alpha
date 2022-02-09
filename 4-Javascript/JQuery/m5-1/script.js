@@ -1,106 +1,83 @@
-function getById(id) {
-    return document.getElementById(id)
-}
-
-function getByName(yourClass) {
-    return document.getElementsByClassName(yourClass)
-}
-
-function writeInTag(id, content) {
-    getById(id).innerHTML = content
-}
-
-function addWriteInTag(id, content) {
-    getById(id).innerHTML += content
-}
-
-function calculadora() {
-return {
-    setOperand1(_operand1){
-        this.operand1 = _operand1
-    },
-
-    setOperand2(_operand2){
-        this.operand2 = _operand2
-    },
-
-    setOperation(_operation){
-        this.operation = _operation
-    },
-
-    getResult(){
+class calculus {
+    Account() {
         let result
 
         switch (this.operation) {
-            case '+': result = this.operand1 + this.operand2;
-                break;
+            case "sum": result = this.operand1 + this.operand2;
+            break;
 
-            case '-': result = this.operand1 - this.operand2;
-                break;
+            case "sub": result = this.operand1 - this.operand2;
+            break;
 
-            case '*': result = this.operand1 * this.operand2;
-                break;
+            case "mult": result = this.operand1 * this.operand2;
+            break;
 
-            case '/': this.operand2 !== 0 ? result = this.operand1 / this.operand2: result = "Não pode dividir por 0";
-                break;
+            case "division": result = this.operand1 / this.operand2;
+            break;
         }
-
         return result
-    },
-
-    clearCalculator() {
-        this.operand1 = 0
-        this.operand2 = 0
-    },
+    }
 }
+let resulting = new calculus()
+
+function digitInput(id) {
+    $("#response").append(id)
 }
 
-const operationButtons = getByName('operation-buttons')
-let calculus = calculadora()
+function defineOperation(operation) {
+    resulting.operation = operation
+}
 
-function digitInput(digit) {
-    addWriteInTag("response", digit)
+function switchColorButton(id) {
+    $(".operation-buttons").css("background", "#EFEFEF")
+    $(`#${id}`).css("background", "red")
+    defineOperation(id)
+
+}
+
+function verifyTerms() {
+    if ( $("#response").text() !== '' && $("#containerNumberDigited").text() === '' ) {
+            $("#containerNumberDigited").html($("#response").text())
+            $("#response").html("")
+    }
 }
 
 function operationInput(operation) {
+    switch (operation) {
+        case 'sum': switchColorButton("sum");
+        break;
 
-    for (let i = 0; i < operationButtons.length; i++) {
-        operationButtons[i].id == operation ? operationButtons[i].style.background = 'blue' :
-        operationButtons[i].style.background = '#efefef';
+        case 'sub': switchColorButton("sub");
+        break;
+
+        case 'mult': switchColorButton("mult");
+        break;
+
+        case 'division': switchColorButton("division");
+        break;
     }
 
-    let operand1 = getById("response").innerHTML
-
-    if ( getById("response").innerHTML !== "") {
-        writeInTag("containerNumberDigited", operand1)
-        calculus.setOperand1(operand1)
-        writeInTag("response", '')
-    }
-
-    if (getById("containerNumberDigited").innerHTML !== "") {
-        calculus.setOperation(operation)
-    }
+    verifyTerms()
 }
 
-function result() {
-    const operand1 = parseFloat(getById("containerNumberDigited").innerHTML)
-    const operand2 = parseFloat(getById("response").innerHTML)
+function makeAccount() {
+    resulting.operand1 = parseFloat( $("#containerNumberDigited").text() )
+    resulting.operand2 = parseFloat( $("#response").text() )
 
-    if (getById("containerNumberDigited").innerHTML !== '' && getById("response").innerHTML !== '') {
-        calculus.setOperand1(operand1)
-        calculus.setOperand2(operand2)
+    const finalResult = resulting.Account()
 
-        getById("containerNumberDigited").innerHTML = ''
-        getById("response").innerHTML = calculus.getResult()
-        getById(calculus.operation).style.background = '#efefef'
-
-        calculus.clearCalculator()
-    }
+    $("#response").html(finalResult)
+    $("#containerNumberDigited").html('')
+    switchColorButton(null)
 }
 
 function del() {
-    getById("containerNumberDigited").innerHTML = ''
-    getById("response").innerHTML = ''
+    let number = $('#response').text()
 
-    calculus.clearCalculator()
+    $('#response').html( number.slice(0, number.length - 1) )
+}
+
+function delAll() {
+    $("#response").html('')
+    $("#containerNumberDigited").html('')
 }
