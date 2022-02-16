@@ -3,8 +3,26 @@ body {
 }
 
 main {
-    margin: 0 auto;
-    width: 1000px;
+    margin: 10px auto;
+    width: 60vw;
     display: flex;
     flex-direction: column;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+button {
+    margin: 30px;
+}
+
+.container-inputs {
+    margin: 20px auto;
+}
+
+#catalog {
+    text-align: center;
 }

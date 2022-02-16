@@ -1,11 +1,1 @@
-[
-    {
-        "id": 1,
-        "game": "Dark Souls",
-        "year": "2011",
-        "genre": "Souls-like",
-        "multiplayer": false,
-        "offline": true,
-        "crossplataform": false
-    }
-]
+[{"id":1,"game":"Dark Souls","year":"2011","genre":"Souls-like","multiplayer":false,"offline":true,"crossplataform":false},{"id":"2","game":"Skyrim","year":"2010","genre":"RPG","multiplayer":false,"offline":true,"crossplataform":false},{"id":"3","game":"The Witcher 3","year":"2016","genre":"RPG","multiplayer":false,"offline":true,"crossplataform":false}]

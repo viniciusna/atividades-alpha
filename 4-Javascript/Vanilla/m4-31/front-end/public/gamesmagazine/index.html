@@ -12,46 +12,55 @@
 <body>
 
     <main>
-        <forms>
-            <div>
+        <form>
+            <div class="container-inputs">
                 <label for="input-id">ID</label>
-                <input id="input-id" type="text">
+                <input id="input-id" type="number">
             </div>
 
-            <div>
+            <div class="container-inputs">
                 <label for="input-game">Game</label>
                 <input id="input-game" type="text">
             </div>
 
-            <div>
+            <div class="container-inputs">
                 <label for="input-year">Ano</label>
-                <input id="input-year" type="text">
+                <input id="input-year" type="number">
             </div>
 
-            <div>
+            <div class="container-inputs">
                 <label for="input-genre">Gênero</label>
                 <input id="input-genre" type="text">
             </div>
 
-            <div>
+            <div class="container-inputs">
                 <label for="input-multiplayer">Multiplayer</label>
-                <input id="input-multiplayer" type="text">
+                <select name="multiplayer" id="input-multiplayer">
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
             </div>
     
-            <div>
+            <div class="container-inputs">
                 <label for="input-offline">Offlline</label>
-                <input id="input-offline" type="text">
+                <select name="offline" id="input-offline">
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
             </div>
-    
-            <div>
+
+            <div class="container-inputs">
                 <label for="input-crossplataform">Crossplataform</label>
-                <input id="input-crossplataform" type="text">
+                <select name="crossplataform" id="input-crossplataform">
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
             </div>
+        </form>
+        <button onclick="registerGame()">Cadastrar game</button>
 
-            <button>Cadastrar game</button>
-
-        </forms>
         <div id="response"></div>
+        <table id="catalog"></table>
     </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- import JQuery -->
