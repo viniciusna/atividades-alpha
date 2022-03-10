@@ -5,9 +5,13 @@ function requisition() {
             url : 'http://localhost:8080'
         })
         .done( data => {
+            resolve("Promisse resolvida")
             $("#requisition-time").text(`Tempo de request: ${data} ms`)
-            parseInt(data) <= 3000 ? resolve("Promisse resolvida") : reject("Promisse rejeitada")
         })
+
+        setTimeout(() => {
+            reject("Promisse rejeitada")
+        }, 3000)
     })
 
     console.log('Executou a promise')
