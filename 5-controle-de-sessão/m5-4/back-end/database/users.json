@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "vinicius", "pw": "senha"},
+    { "id": 2, "name": "odin", "pw": "corvo"},
+    { "id": 3, "name": "thor", "pw": "mjonir"},
+    { "id": 4, "name": "loki", "pw": "deusdamentira"}
+]
