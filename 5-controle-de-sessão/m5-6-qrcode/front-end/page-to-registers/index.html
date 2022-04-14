@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Página de cadastros</title>
+</head>
+
+<body>
+
+    <main>
+        <p>Cadastrar usuário</p>
+        <div class="container-records">
+            <div>
+                <label for="name">Nome</label>
+                <input id="name" type="text">
+            </div>
+
+            <div>
+                <label for="username">username</label>
+                <input id="username" type="text">
+            </div>
+
+            <div>
+                <label for="pw">Senha</label>
+                <input id="pw" type="password">
+            </div>
+
+            <button onclick="registerUser()">Cadastrar usuário</button>
+
+            <div id="response-user"></div>
+        </div>
+
+        <p>Cadastrar evento</p>
+        <div class="container-records">
+            <div>
+                <label for="title">Título</label>
+                <input id="title" type="text">
+            </div>
+
+            <div>
+                <label for="description">Descrição</label>
+                <input id="description" type="text">
+            </div>
+
+            <div>
+                <label for="date">Data</label>
+                <input id="date" type="date">
+            </div>
+
+            <div>
+                <label for="hour">Hora</label>
+                <input id="hour" type="time">
+            </div>
+
+            <button onclick="registerEvent()">Cadastrar evento</button>
+
+            <div id="response-event"></div>
+        </div>
+    </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- import JQuery -->
+</body>
+
+<script src="script.js"></script>
+
+</html>

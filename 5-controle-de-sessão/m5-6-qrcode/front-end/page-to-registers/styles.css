@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-records * {
+    margin: 10px;
+}

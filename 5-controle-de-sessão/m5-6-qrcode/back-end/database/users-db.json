@@ -1,0 +1,2 @@
+[{"id":1, "name": "Vinicius", "username": "admin", "pw": "admin", "events": [], "admin": true},
+{"id":2, "name": "Vinicius Noronha Almeida", "username": "vini", "pw": "senha", "events": [1, 2], "admin": false }]

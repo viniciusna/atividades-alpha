@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Página de login</title>
+</head>
+
+<body>
+
+    <main>
+        Faça seu login
+
+        <div>
+            <div>
+                <label for="username">Username</label>
+                <input id="username" type="text">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="pw">Senha</label>
+                <input id="pw" type="password">
+            </div>
+        </div>
+
+        <button onclick="tryLogin()">Login</button>
+
+        <div id="response"></div>
+
+    </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- import JQuery -->
+</body>
+
+<script type="text/javascript" src="qrcode.js"></script>
+<script src="script.js"></script>
+
+</html>
