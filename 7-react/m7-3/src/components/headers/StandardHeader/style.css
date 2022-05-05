@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+#standard-header {
+  width: 100vw;
+  background-color: #090d12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
+#standard-header > button {
+  position: absolute;
+  right: 10px;
+}
+
+#profiler-header {
+  font-family: 'Righteous', cursive;
+  font-size: 40px;
+  margin: 0;
+  color: #fafafa;
+}
