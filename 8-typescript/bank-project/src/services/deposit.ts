@@ -2,6 +2,7 @@ import {Deposit, APIresponse} from "../models"
 import {AccountNumbersValidator, ValueValidator} from "../utils"
 import {Client} from "pg"
 import 'dotenv/config'
+import { v4 } from "uuid"
 
 class DepositService {
 
@@ -39,6 +40,17 @@ class DepositService {
             const upValues = [accountData.id, accountData.account_balance]
 
             const upDbResponse = await client.query(upText, upValues)
+
+            const registerText = "INSERT INTO bank_statements VALUES ($1, $2, $3, $4, $5, NOW());"
+            const registerValues = [v4(), null, "deposit", accountData.id, data.value]
+
+            await client.query(registerText, registerValues)
+
+            const feeText = "INSERT INTO bank_statements VALUES ($1, $2, $3, $4, $5, NOW());"
+            const feeValues = [v4(), accountData.id, "deposit fee", null, -data.value*0.01 ]
+
+            await client.query(feeText, feeValues)
+
             await client.end()
 
             return {data: {account_balance: upDbResponse.rows[0].account_balance}, messages: ["Deposited"]}

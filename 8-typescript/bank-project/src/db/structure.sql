@@ -28,11 +28,38 @@ CREATE TABLE accounts (
 	account_balance NUMERIC(10,2)
 )
 
+CREATE TABLE bank_statements (
+	id CHAR(36) PRIMARY KEY,
+	operating_account_id CHAR(36) REFERENCES accounts (id),
+	operation_type VARCHAR,
+	destiny_account_id CHAR(36) REFERENCES accounts (id),
+	value NUMERIC(10,2),
+	created_at TIMESTAMP
+)
+
 SELECT * FROM clients;
 SELECT * FROM accounts;
+SELECT * FROM bank_statements;
 
 TRUNCATE TABLE clients;
 TRUNCATE TABLE accounts;
+TRUNCATE TABLE bank_statements;
 
-drop table accounts;
+drop table bank_statements;
+
+-- Tratando só depósitos e saques primeiro
+SELECT operation_type, "value", created_at
+FROM bank_statements
+WHERE operating_account_id='33834140-8bc8-4171-9d28-276419d68e78' AND operation_type != 'transfer'
+OR operation_type='deposit' AND destiny_account_id='33834140-8bc8-4171-9d28-276419d68e78';
+
+SELECT * FROM bank_statements
+INNER JOIN accounts
+ON operating_account_id=accounts.id OR destiny_account_id=accounts.id
+WHERE accounts.id='33834140-8bc8-4171-9d28-276419d68e78'
+
+
+
+
+
 

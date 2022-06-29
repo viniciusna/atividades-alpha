@@ -2,6 +2,7 @@ import {Withdrawal, APIresponse} from "../models"
 import {AccountNumbersValidator, ValueValidator, PasswordValidator} from "../utils"
 import {Client} from "pg"
 import 'dotenv/config'
+import { v4 } from "uuid"
 
 class WithdrawalService {
 
@@ -18,7 +19,7 @@ class WithdrawalService {
         return await this.makeTheWithdrawal(data)
     }
 
-    private async makeTheWithdrawal(data: Withdrawal) {
+    private async makeTheWithdrawal(data: Withdrawal): Promise<APIresponse> {
 
         try {
             const client = new Client()
@@ -45,6 +46,17 @@ class WithdrawalService {
             const upValues = [accountData.id, accountData.account_balance]
 
             const upDbResponse = await client.query(upText, upValues)
+
+            const registerText = "INSERT INTO bank_statements VALUES ($1, $2, $3, $4, $5, NOW());"
+            const registerValues = [v4(), accountData.id, "withdrawal", null, -data.value]
+
+            await client.query(registerText, registerValues)
+
+            const feeText = "INSERT INTO bank_statements VALUES ($1, $2, $3, $4, $5, NOW());"
+            const feeValues = [v4(), accountData.id, "withdrawal fee", null, -4.00 ]
+
+            await client.query(feeText, feeValues)
+
             await client.end()
 
             return {data: {account_balance: upDbResponse.rows[0].account_balance}, messages: [`Withdrawal of R$${data.value} and a fee of R$4.00`]}
