@@ -53,7 +53,7 @@ class DepositService {
 
             await client.end()
 
-            return {data: {account_balance: upDbResponse.rows[0].account_balance}, messages: ["Deposited"]}
+            return {data: {account_balance: upDbResponse.rows[0].account_balance}, messages: []}
 
         } catch (err) {
             throw new Error(`Unexpected error`)

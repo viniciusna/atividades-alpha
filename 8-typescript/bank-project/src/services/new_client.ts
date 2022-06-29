@@ -1,7 +1,8 @@
-import {APIresponse, DataForNewClient} from "../models"
+import {APIresponse, DataForNewClient, DataToCreateAccount} from "../models"
 import {NameValidator, EmailValidator, DateValidator, CPFValidator} from "../utils"
 import { v4 } from "uuid"
 import {Client} from "pg"
+import {CreateAccountService} from "../services"
 
 class NewClientService {
 
@@ -31,16 +32,28 @@ class NewClientService {
                 const client = new Client()
                 await client.connect()
 
+                const searchText = "SELECT * FROM clients WHERE cpf=$1"
+                const searchValues = [userData.cpf]
+
+                const searchResponse = await client.query(searchText, searchValues)
+
+                if (searchResponse.rows.length > 0) {
+                    const createAccount = new CreateAccountService
+                    const dataToCreateAccount = {cpf: userData.cpf, password: data.password}
+                    return createAccount.createAccount(dataToCreateAccount)
+                }
+
                 const text = 'INSERT INTO clients VALUES($1, $2, $3, $4, $5) RETURNING *'
                 const values = [id, userData.name, userData.birthdate, userData.email, userData.cpf ]
 
-                client.query(text, values, async (err, res) => {
-                    await client.end()
-                  })
+                const dbResponse = await client.query(text, values)
 
-                return {data: userData, messages: [id]}
+                await client.end()
+                const createAccount = new CreateAccountService
+                const dataToCreateAccount = {cpf: userData.cpf, password: data.password}
+                return createAccount.createAccount(dataToCreateAccount)
             } catch (err) {
-                throw new Error(`Unexpected error`)
+                throw new Error(`Unexpected error ${err}`)
             }
         }
     }

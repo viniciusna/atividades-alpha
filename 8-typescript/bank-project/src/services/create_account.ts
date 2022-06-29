@@ -6,7 +6,7 @@ import 'dotenv/config'
 
 class CreateAccountService {
 
-    public async createAccount(data: DataToCreateAccount): Promise<APIresponse> {
+    public async createAccount(data: any): Promise<APIresponse> {
 
         const validCPF = new CPFValidator(data.cpf)
         const validPassword = new PasswordValidator(data.password)
@@ -55,7 +55,7 @@ class CreateAccountService {
     }
 
     private async generateAccountData(clientId: string, pw: string): Promise<APIresponse> {
-        const AccountNumber = Math.floor(Math.random()*100000)
+        const AccountNumber = Math.floor(Math.random()*90000+10000)
         const VerifyingDigit = Math.floor(Math.random()*10)
 
         console.log(AccountNumber)
@@ -76,7 +76,7 @@ class CreateAccountService {
                 account_verifying_digit: dbResponse.rows[0].account_verifying_digit
             }
 
-            return {data: accountData, messages: ["Account created"]}
+            return {data: accountData, messages: []}
 
         } catch (err) {
             throw new Error(`Unexpected error`)
