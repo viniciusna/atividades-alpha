@@ -51,8 +51,7 @@ class BankStatementConsult {
     private async setUpRegisterBankStatement(row: any, accountId: string) {
         if (row.operation_type != "transfer") {
             return {operation_type: row.operation_type, value: row.value, when: row.created_at}
-        }
-        else if (row.operating_account_id === accountId) {
+        } else if (row.operating_account_id === accountId) {
             const client = new Client()
             await client.connect()
 

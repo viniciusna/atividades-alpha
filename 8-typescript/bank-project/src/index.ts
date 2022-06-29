@@ -7,15 +7,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 const NewClient = new routes.NewClientController
-const NewAccount = new routes.CreateAccountController
 const Deposit = new routes.DepositController
 const Withdrawal = new routes.WithdrawalController
 const BankStatement = new routes.BankStatementController
 const Transaction = new routes.TransactionController
 
 app.post("/new-client", (req: Request, res: Response) => NewClient.newClientResponse(req, res))
-
-app.post("/create-account", (req: Request, res: Response) => NewAccount.createAccountResponse(req, res))
 
 app.post("/deposit",(req: Request, res: Response) => Deposit.toDeposit(req, res))
 
