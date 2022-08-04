@@ -1,6 +1,7 @@
 import {AccountNumbersValidator, PasswordValidator} from "../utils"
 import {Client} from "pg"
 import {BankStatement, APIresponse} from "../models"
+import {SelectAccount} from "../clients"
 
 class BankStatementConsult {
 
@@ -22,10 +23,8 @@ class BankStatementConsult {
             const client = new Client()
             await client.connect()
 
-            const text = 'SELECT * FROM accounts WHERE account_number=$1 AND account_verifying_digit=$2 AND password=$3'
-            const values = [data.account_number, data.account_verifying_digit, data.password]
-
-            const dbResponse = await client.query(text, values)
+            const selectAccount = new SelectAccount
+            const dbResponse = await selectAccount.getAccountWithPassword(data.account_number, data.account_verifying_digit, data.password, client)
 
             if (dbResponse.rows.length === 0) {
                 await client.end()
