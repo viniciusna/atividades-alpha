@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "game": "Dark Souls",
+        "year": "2011",
+        "genre": "Souls-like",
+        "multiplayer": false,
+        "offline": true,
+        "crossplataform": false
+    }
+]

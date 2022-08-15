@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-size: 18px;
+}
+
+main {
+    margin: 30px auto;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input-cep {
+    margin-right: 20px;
+}
+
+#search-button {
+    width: 70px;
+    height: 25px;
+    border: none;
+    color: #f5f5f5;
+    background: #2513bf;
+    border-radius: 3px;
+}
+
+#search-button:hover {
+    cursor: pointer;
+}
+
+#search-button:hover {
+    cursor: pointer;
+}
+#search-button:active {
+    background: #130b5a;
+}
+
+#response {
+    margin: 20px;
+}

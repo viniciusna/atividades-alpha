@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Games Magazine</title>
+</head>
+
+<body>
+
+    <main>
+        <form>
+            <div class="container-inputs">
+                <label for="input-id">ID</label>
+                <input id="input-id" type="number">
+            </div>
+
+            <div class="container-inputs">
+                <label for="input-game">Game</label>
+                <input id="input-game" type="text">
+            </div>
+
+            <div class="container-inputs">
+                <label for="input-year">Ano</label>
+                <input id="input-year" type="number">
+            </div>
+
+            <div class="container-inputs">
+                <label for="input-genre">Gênero</label>
+                <input id="input-genre" type="text">
+            </div>
+
+            <div class="container-inputs">
+                <label for="input-multiplayer">Multiplayer</label>
+                <select name="multiplayer" id="input-multiplayer">
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
+            </div>
+    
+            <div class="container-inputs">
+                <label for="input-offline">Offlline</label>
+                <select name="offline" id="input-offline">
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
+            </div>
+
+            <div class="container-inputs">
+                <label for="input-crossplataform">Crossplataform</label>
+                <select name="crossplataform" id="input-crossplataform">
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
+            </div>
+        </form>
+        <button onclick="registerGame()">Cadastrar game</button>
+
+        <div id="response"></div>
+        <table id="catalog"></table>
+    </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- import JQuery -->
+</body>
+
+<script src="script.js"></script>
+
+</html>
